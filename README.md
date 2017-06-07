@@ -31,16 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
   try {
     fin.desktop.main(function() {
       const root = document.getElementById('root'); // or whatever your root DOM element is for React mounting
-      initWidgetHandler(widgets, () => {
-        // whatever app init logic you would normally have without a widget handler
-        ReactDOM.render(<App />, root);
-      }, root);
+      initWidgetHandler({
+        widgets: widgets,
+        appInit: () => {
+          // whatever app init logic you would normally have without a widget handler
+          ReactDOM.render(<App />, root);
+        },
+        rootElement: root
+      });
     });
   } catch (e) {
     // no fin... standard browser
   }
 });
 ```
+
+### initWidgetHandler options
+* ***widgets***: (required) object containing widgets (see above for example)
+* ***appInit***: (required) function (); any app init code (set up routers or whatever you want) if this Window ***is not*** a Widget
+* ***widgetInit***: function (windowCustomData, WidgetClass); any code you want to execute if this Window ***is*** a Widget
+* ***widgetWrapper***: function (widgetInstance, widgetInitRtn); return a wrapper for the widget if you need something like a Redux Provider
+* ***rootElement***: DOM element which sould be used as the root for the Widget bindings
 
 ## Opening a Widget
 ```javascript
