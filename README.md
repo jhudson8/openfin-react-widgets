@@ -91,7 +91,10 @@ export default MyFooWidget ({ trigger, message }) {
     <div>
       the message is {message}.
       <br/>
-      click <button type="button" onClick={() => trigger('onSomeButtonClick', { message: 'world' })}>this button</button>
+      click
+      <button type="button" onClick={() => trigger('onSomeButtonClick', { message: 'world' })}>
+        this button
+      </button>
     </div>
   );
 }
