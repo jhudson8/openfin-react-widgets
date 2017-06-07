@@ -1,6 +1,7 @@
 openfin-react-widgets
 ---------------------
-Use this if you want to create child windows out of a single React component and not have to worry about all the plumbing.
+Use this if you want to create child windows out of a single React component and not have to worry about all the plumbing and interapp event publishing.
+
 Features:
 
 * Widget React component can trigger events to be consumed (and isolated to) the creator of the Widget
