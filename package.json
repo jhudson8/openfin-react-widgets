@@ -1,6 +1,6 @@
 {
   "name": "openfin-react-widgets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper to create standalone child windows containing a single React component with ability to set props and trigger events",
   "main": "dist/index.js",
   "scripts": {
